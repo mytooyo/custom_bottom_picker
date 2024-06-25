@@ -10,7 +10,7 @@ Multiple items can be displayed on the picker at once.
 
 |Phone|Tablet|
 |---|---|
-|<img src="https://raw.githubusercontent.com/mytooyo/custom_bottom_picker/main/example/screenshots/phone.gif" width="300" />|<img src="https://raw.githubusercontent.com/mytooyo/custom_bottom_picker/main/example/screenshots/tablet.gif" width="440" />|
+|<img src="https://raw.githubusercontent.com/mytooyo/custom_bottom_picker/main/example/screenshots/phone.gif" width="300" />|<img src="https://raw.githubusercontent.com/mytooyo/custom_bottom_picker/main/example/screenshots/tablet_landscape.gif" width="440" />|
 
 - Text Picker
 - Widget Picker
