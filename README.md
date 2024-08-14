@@ -23,7 +23,7 @@ In order to add custom_bottom_picker package to your project add this line to yo
 
 ```yaml
 dependencies:
-    custom_bottom_picker: 1.0.0
+    custom_bottom_picker: 1.0.1
 ```
 
 ## Usage

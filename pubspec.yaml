@@ -2,7 +2,7 @@ name: custom_bottom_picker
 description: >-
   Custom picker for Flutter. 
   This package is for selecting the listings you want to display in a picker format.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/mytooyo/custom_bottom_picker
 
 environment:

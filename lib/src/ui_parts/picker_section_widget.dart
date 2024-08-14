@@ -152,29 +152,25 @@ class _PickerSectionWidgetState extends State<PickerSectionWidget> {
   }
 
   Widget _item(int i, Widget child) {
-    double opacity = 1.0;
     double scale = 1.0;
-    if (selectedIndex == i) {
-      opacity = 1.0;
-    } else {
-      opacity = 0.4;
+    if (selectedIndex != i) {
       scale = 0.84;
     }
 
     return Center(
       child: Transform.scale(
         scale: scale,
-        child: Opacity(
-          opacity: opacity,
-          child: child,
-        ),
+        child: child,
       ),
     );
   }
 
   Widget _textItem(int i) {
+    final textColor = widget.options.textColor ??
+        Theme.of(context).textTheme.bodyLarge?.color;
+
     TextStyle? textStyle = Theme.of(context).textTheme.bodyLarge?.copyWith(
-          color: widget.options.textColor,
+          color: textColor?.withOpacity(selectedIndex == i ? 1.0 : 0.4),
           fontWeight: FontWeight.bold,
           fontSize: 17,
         );
