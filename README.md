@@ -1,7 +1,7 @@
 # Custom Bottom Picker
 
 You can easily implement a Picker for any item you like.  
-Not only lists of text, but also lists of widgets can be made into a picker,   
+Not only lists of text, but also lists of widgets can be made into a picker,
 so you can create a picker with a design that suits your application.
 
 Multiple items can be displayed on the picker at once.  
@@ -23,7 +23,7 @@ In order to add custom_bottom_picker package to your project add this line to yo
 
 ```yaml
 dependencies:
-    custom_bottom_picker: 1.0.1
+    custom_bottom_picker: 1.0.2
 ```
 
 ## Usage

@@ -54,7 +54,9 @@ class _PickerSectionWidgetState extends State<PickerSectionWidget> {
         child: Text(
           widget.section.title!,
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: widget.options.getTextColor(context)?.withOpacity(0.5),
+                color: widget.options
+                    .getTextColor(context)
+                    ?.withValues(alpha: 0.5),
                 fontWeight: FontWeight.bold,
               ),
         ),
@@ -170,7 +172,7 @@ class _PickerSectionWidgetState extends State<PickerSectionWidget> {
         Theme.of(context).textTheme.bodyLarge?.color;
 
     TextStyle? textStyle = Theme.of(context).textTheme.bodyLarge?.copyWith(
-          color: textColor?.withOpacity(selectedIndex == i ? 1.0 : 0.4),
+          color: textColor?.withValues(alpha: selectedIndex == i ? 1.0 : 0.4),
           fontWeight: FontWeight.bold,
           fontSize: 17,
         );
