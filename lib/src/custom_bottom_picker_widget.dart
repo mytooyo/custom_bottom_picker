@@ -9,11 +9,14 @@ class CustomBottomPickerWidget extends StatefulWidget {
     super.key,
     this.options = const CustomBottomPickerOptions(),
     required this.sections,
+    this.closeButtonBuilder,
   });
 
   final CustomBottomPickerOptions options;
 
   final List<CustomBottomPickerSection> sections;
+
+  final CloseButtonBuilder? closeButtonBuilder;
 
   @override
   State<CustomBottomPickerWidget> createState() =>
@@ -83,6 +86,7 @@ class _CustomBottomPickerWidgetState extends State<CustomBottomPickerWidget> {
                 onClose: () {
                   Navigator.of(context).pop(results);
                 },
+                closeButtonBuilder: widget.closeButtonBuilder,
               ),
               const SizedBox(height: 8),
               Expanded(child: _picker()),
@@ -97,15 +101,24 @@ class _CustomBottomPickerWidgetState extends State<CustomBottomPickerWidget> {
 class TopHeader extends StatelessWidget {
   final CustomBottomPickerOptions options;
   final void Function() onClose;
+  final CloseButtonBuilder? closeButtonBuilder;
 
   const TopHeader({
     super.key,
     required this.options,
     required this.onClose,
+    this.closeButtonBuilder,
   });
 
   @override
   Widget build(BuildContext context) {
+    final closeButton = closeButtonBuilder?.call(context, false, onClose) ??
+        IconButton(
+          onPressed: onClose,
+          icon: const Icon(Icons.check_circle_rounded),
+          color: options.getActiveColor(context),
+        );
+
     return SizedBox(
       height: 48,
       child: Stack(
@@ -126,11 +139,7 @@ class TopHeader extends StatelessWidget {
             right: 0,
             bottom: 0,
             child: Center(
-              child: IconButton(
-                onPressed: onClose,
-                icon: const Icon(Icons.check_circle_rounded),
-                color: options.getActiveColor(context),
-              ),
+              child: closeButton,
             ),
           ),
         ],

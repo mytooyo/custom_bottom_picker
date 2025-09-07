@@ -36,6 +36,7 @@ Future<CustomBottomPickerResult?> showCustomBottomPicker({
   bool enableDrag = true,
   bool? showDragHandle,
   bool useSafeArea = false,
+  CloseButtonBuilder? closeButtonBuilder,
 }) async {
   final opt = options ?? const CustomBottomPickerOptions();
   return await showModalBottomSheet<CustomBottomPickerResult?>(
@@ -56,6 +57,7 @@ Future<CustomBottomPickerResult?> showCustomBottomPicker({
       child: CustomBottomPickerWidget(
         options: opt,
         sections: sections,
+        closeButtonBuilder: closeButtonBuilder,
       ),
     ),
   );

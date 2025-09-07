@@ -67,3 +67,9 @@ extension CustomBottomPickerOptionsExtension on CustomBottomPickerOptions {
 
   bool get isTopTitleHeader => pickerTitle != null && pickerTitle!.isNotEmpty;
 }
+
+typedef CloseButtonBuilder = Widget Function(
+  BuildContext context,
+  bool isModal,
+  void Function() onClose,
+);

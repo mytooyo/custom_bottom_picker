@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Add `customCloseButtonBuilder`.
+
 ## 1.0.2
 
 * Flutter 3.29 supported.
